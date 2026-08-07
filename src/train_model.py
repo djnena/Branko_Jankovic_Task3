@@ -5,7 +5,7 @@ from sklearn.compose import ColumnTransformer
 from sklearn.pipeline import Pipeline
 from sklearn.svm import LinearSVC
 
-df=pd.read_csv("Branko_Jankovic_Task3/data/products.csv")
+df=pd.read_csv("data/products.csv")
 
 #sklanjanje vodecih ili zavrsnih razmaka
 df.columns = df.columns.str.strip()
@@ -40,6 +40,6 @@ final_model = Pipeline([
 final_model.fit(X, y)
 
 # Čuvanje modela i vektorizatora
-joblib.dump(final_model, "Branko_Jankovic_Task3/model/final_linear_svm_model.pkl")
+joblib.dump(final_model, "model/final_linear_svm_model.pkl")
 
 print("Sačuvan fajl: final_linear_svm_model.pkl")
